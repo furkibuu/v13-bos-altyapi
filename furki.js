@@ -7,8 +7,10 @@ const client = global.client = new Client({	allowedMentions: { parse: ['users', 
 const set = require("./ayarlar.json");
 
 let prefix = set.prefix;
+let token = set.token;
+let durum = set.botdurum;
 
-client.login(set.token).catch(err => {console.error("Tokene bağlanılamıyor tokeni yenileyin!")});
+client.login(token).catch(err => {console.error("Tokene bağlanılamıyor tokeni yenileyin!")});
 
 client.commands = new Collection();
 const { readdirSync } = require("fs");   
@@ -23,13 +25,15 @@ for (const file of commandFiles) {
 }
 
 readdirSync("./Events").filter(file => file.endsWith(".js")).forEach(file => {
-    let event = require(`./Events/${file}`);
+    let event = require(`./events/${file}`);
     client.on(event.conf.event, event.execute);
     console.log(` { ${file.replace(".js", "") } } adlı event başarıyla çalışıyor.`);
 });
 
 client.on("ready", async() => {
   console.log("Bot Başarıyla giriş yaptı!")
+  client.user.setActivty(botdurum)
+  
   console.log("Botun Prefixi")
   console.log("prefix")
   
