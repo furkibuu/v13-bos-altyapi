@@ -1,0 +1,20 @@
+{
+  "name": "Furki V13 Boş Altyapı",
+  "version": "3.0.0",
+  "description": "Furki V13 Altyapı",
+  "main": "furki.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node furki.js",
+    "dev": "nodemon furki.js"
+  },
+  "keywords": [],
+  "author": "Ewing",
+  "license": "ISC",
+  "devDependencies": {
+    "node": "16.6.0"
+  },
+  "dependencies": {
+    "discord.js": "^13.5.1"
+  }
+}
