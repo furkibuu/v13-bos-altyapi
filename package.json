@@ -9,7 +9,7 @@
     "dev": "nodemon furki.js"
   },
   "keywords": [],
-  "author": "Ewing",
+  "author": "Furki",
   "license": "ISC",
   "devDependencies": {
     "node": "16.6.0"
